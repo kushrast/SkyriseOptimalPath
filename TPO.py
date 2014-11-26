@@ -1,10 +1,4 @@
-from numpy import genfromtxt
-my_data = genfromtxt('my_file.csv', delimiter=',')
+import pandas as pd
+df=pd.read_csv('TPO_NoGraphics.csv', sep=',',header=None)
 
-time = 0
-o
-
-
-def main():
-	while time < 120:
-		create numpy.array
+print df.values
