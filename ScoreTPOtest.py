@@ -1,14 +1,4 @@
-from numpy import genfromtxt
 import numpy
-
-TPO_data = genfromtxt('TPO_NoGraphics.csv', delimiter=',',dtype="str")
-Time_Data = genfromtxt('TravelTime.csv', delimiter=',',dtype="str")
-time = 0
-cubes = 20
-
-def StackTPO(z,LastPosition,y,g):
-	#fairly simply - move function is already accounted for. just need to calculate time to add the next skyrise peg.
-
 
 def ScoreTPO(z,LastPosition):
 	thistime = 0
@@ -68,40 +58,4 @@ def ScoreTPO(z,LastPosition):
 	numCubes = tpox[len(points)-1]
 	return numCubes+1,tpo[numCubes]
 
-def TimeToTile(Start,End):
-	#returns time taken from one tile to the next
-
-def intaking(Start,numberofcubes):
-	#returns time taken to intake, position of intaken cubes, and end position
-
-def OptimizedPath():
-	StartingPosition = 7;
-	LastPosition = StartingPosition;
-	time = 15;
-	while time < 120:
-		print "It has been "+time+" seconds "+" and we're starting on Tile "+LastPosition;
-		this_run = numpy.empty((0,4),str)
-		for x in activities:
-			if int(x[3]) > 0:
-				if x[2] != "Stack":
-					this_run = numpy.append(this_run,[x[0],x[1],x[2],ScoreTPO(x,LastPosition)])
-
-
-	/* remaining = numpy.empty((0,8),str)
-	tpo_rem = numpy.empty(63,str)
-	for x in TPO_data:
-		if x[0] != "Starting Position":
-			if x[7] != "Done":
-				remaining = numpy.vstack((remaining,x))
-	lastp = 0
-	lastt = 0
-	for x in remaining:
-		if x[1] == "Stack":
-			d = StackTPO(x,LastPosition,lastp,lastt)
-			print d[0]
-			lastt = d[1]
-			lastp = d[2] */
-		
-
-OptimizedPath()
-
+print ScoreTPO(["7","9","Skyrise","6"],5)
