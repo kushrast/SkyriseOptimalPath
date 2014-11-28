@@ -1,0 +1,36 @@
+It has been 0.0 seconds  and we're starting on Tile 7
+We are now going to stack our 1th skyrise
+It has been 4.0 seconds  and we're starting on Tile 7
+We are now going to score 1 cubes onto the Skyrise in region 7. This gives us another 4.0 points for a total of 8.0 points.
+It has been 7.0 seconds  and we're starting on Tile 7
+We are now going to score 2 cubes onto the Small in region 7. This gives us another 4.0 points for a total of 12.0 points.
+It has been 13.0 seconds  and we're starting on Tile 7
+We are now going to score 1 cubes onto the Small in region 7. This gives us another 2.0 points for a total of 14.0 points.
+It has been 16.0 seconds  and we're starting on Tile 7
+We are now going to stack our 2th skyrise
+It has been 24.0 seconds  and we're starting on Tile 7
+We are now going to score 1 cubes onto the Skyrise in region 7. This gives us another 4.0 points for a total of 22.0 points.
+It has been 27.0 seconds  and we're starting on Tile 7
+We are now going to stack our 3th skyrise
+It has been 36.0 seconds  and we're starting on Tile 7
+We are now going to score 1 cubes onto the Skyrise in region 7. This gives us another 4.0 points for a total of 30.0 points.
+It has been 39.0 seconds  and we're starting on Tile 7
+We are now going to stack our 4th skyrise
+It has been 48.0 seconds  and we're starting on Tile 7
+We are now going to score 1 cubes onto the Skyrise in region 7. This gives us another 4.0 points for a total of 38.0 points.
+It has been 51.0 seconds  and we're starting on Tile 7
+We are now going to score 3 cubes onto the Medium in region 8. This gives us another 6.0 points for a total of 44.0 points.
+It has been 65.0 seconds  and we're starting on Tile 8
+We are now going to score 3 cubes onto the Medium in region 8. This gives us another 6.0 points for a total of 50.0 points.
+It has been 76.0 seconds  and we're starting on Tile 8
+We are now going to score 2 cubes onto the Small in region 9. This gives us another 4.0 points for a total of 54.0 points.
+It has been 85.0 seconds  and we're starting on Tile 9
+We are now going to score 1 cubes onto the Small in region 9. This gives us another 2.0 points for a total of 56.0 points.
+It has been 88.0 seconds  and we're starting on Tile 9
+We are now going to score 2 cubes onto the Small in region 9. This gives us another 4.0 points for a total of 60.0 points.
+It has been 94.0 seconds  and we're starting on Tile 9
+We are now going to score 1 cubes onto the Small in region 9. This gives us another 2.0 points for a total of 62.0 points.
+It has been 97.0 seconds  and we're starting on Tile 9
+We are now going to score 3 cubes onto the Medium in region 6. This gives us another 6.0 points for a total of 68.0 points.
+It has been 111.0 seconds  and we're starting on Tile 6
+We are now going to score 3 cubes onto the Medium in region 6. This gives us another 6.0 points for a total of 74.0 points.

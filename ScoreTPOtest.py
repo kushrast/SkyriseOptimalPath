@@ -56,6 +56,6 @@ def ScoreTPO(z,LastPosition):
 		tpo[x] = (points[x][1])/(points[x][0])
 	tpox = numpy.argsort(tpo)
 	numCubes = tpox[len(points)-1]
-	return numCubes+1,tpo[numCubes]
+	return points[numCubes][0],numCubes+1,tpo[numCubes]
 
 print ScoreTPO(["7","9","Skyrise","6"],5)
