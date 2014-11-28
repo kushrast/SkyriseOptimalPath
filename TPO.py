@@ -12,76 +12,61 @@ def StackTPO(z,LastPosition,y,g):
 
 def ScoreTPO(z,LastPosition):
 	thistime = 0
-	runs = []
-	points = []
-	tpo = []
+	points = numpy.empty((0,2),float)
 	capacity = int(z[3])
 	if capacity < 3:
 		while x in xrange (1,capacity+1):
 			#intaking code goes here
 			if z[2] == "Small": #replace with a switch statement
 				if x == 1:
-					runs[0] = 3
-					points[0] = 2
+					points = numpy.vstack((points,[3,2]))
 				else:
-					runs[1] = 6
-					points[1] = 4
+					points = numpy.vstack((points,[6,4]))
 			else if z[2] == "Medium":
 				if x == 1:
-					runs[0] = 6
-					points[0] = 2
+					points = numpy.vstack((points,[6,2]))
 				else:
-					runs[1] = 9
-					points[1] = 4
+					points = numpy.vstack((points,[9,4]))
 			else if z[2] == "Large":
 				if x == 1:
-					runs[0] = 8
-					points[0] = 2
+					points = numpy.vstack((points,[8,2]))
 				else:
-					runs[1] = 13
-					points[1] = 4
+					points = numpy.vstack((points,[13,4]))
 			else:
 				if x == 1:
-					runs[0] = 3
-					points[0] = 2
+					points = numpy.vstack((points,[3,2]))
 				else:
-					runs[1] = 6
-					points[1] = 4
+					points = numpy.vstack((points,[6,4]))
 	else:
 		while x in xrange(1,4):
 			#intaking code goes here
 			else if z[2] == "Medium":
 				if x == 1:
-					runs[0] = 6
-					points[0] = 2
+					points = numpy.vstack((points,[6,2]))
 				else if x == 2:
-					runs[1] = 9
-					points[1] = 4
+					points = numpy.vstack((points,[9,4]))
 				else if x == 3:
-					runs[2] = 11
-					points[2] = 6
+					points = numpy.vstack((points,[11,6]))
 			else if z[2] == "Large":
 				if x == 1:
-					runs[0] = 8
-					points[0] = 2
+					points = numpy.vstack((points,[8,2]))
 				else if x == 2:
-					runs[1] = 13
-					points[1] = 4
+					points = numpy.vstack((points,[13,4]))
 				else if x == 3:
-					runs[2] = 16
-					points[2] = 6
+					points = numpy.vstack((points,[16,6]))
 			else:
 				if x == 1:
-					runs[0] = 3
-					points[0] = 2
+					points = numpy.vstack((points,[3,2]))
 				else if x == 2:
-					runs[1] = 6
-					points[1] = 4
+					points = numpy.vstack((points,[6,4]))
 				else if x == 3:
-					runs[2] = 9
-					points[2] = 6
-	for x in xrange(0,len(runs)):
-		tpo[x] = points[x]/runs[x] #need to return the tpo, time, and points. 
+					points = numpy.vstack((points,[9,6]))
+	tpo = numpy.empty(len(points),float)
+	for x in xrange(0,len(points)):
+		tpo[x] = (points[x][0])/(points[x][0])
+	tpox = numpy.argsort(tpo)
+	numCubes = tpox[len(points)-1]
+	return numCubes,tpo[MaxTPO]
 
 def TimeToTile(Start,End):
 	#returns time taken from one tile to the next
