@@ -1,36 +1,502 @@
 It has been 0.0 seconds  and we're starting on Tile 7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+(5.0, '7')
+7
+7
+7
+7
+7
+7
+7
+7
+7
+(5.0, '7')
+7
+7
+7
+7
+7
+7
+7
+(5.0, '7')
+7
+7
+7
+(5.0, '7')
+7
+7
 We are now going to stack our 1th skyrise
+[ 1  1  0  1 12  1  2  1  1]
 It has been 4.0 seconds  and we're starting on Tile 7
-We are now going to score 1 cubes onto the Skyrise in region 7. This gives us another 4.0 points for a total of 8.0 points.
-It has been 7.0 seconds  and we're starting on Tile 7
-We are now going to score 2 cubes onto the Small in region 7. This gives us another 4.0 points for a total of 12.0 points.
-It has been 13.0 seconds  and we're starting on Tile 7
-We are now going to score 1 cubes onto the Small in region 7. This gives us another 2.0 points for a total of 14.0 points.
-It has been 16.0 seconds  and we're starting on Tile 7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+(5.0, '7')
+7
+7
+7
+7
+7
+7
+7
+7
+7
+(5.0, '7')
+7
+7
+7
+7
+7
+7
+7
+7
+(5.0, '7')
+7
+7
+7
+(5.0, '7')
+7
+7
+We are now going to score 2 cubes onto the Skyrise in region 7. This gives us another 8.0 points for a total of 12.0 points.
+[ 1  1  0  1 12  1  0  1  1]
+It has been 15.0 seconds  and we're starting on Tile 7
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+(21.5, '4')
+4
+4
+4
+4
+4
+4
+4
+4
+4
+(21.5, '4')
+4
+4
+4
+4
+4
+4
+4
+(21.5, '4')
+4
+4
+4
+(21.5, '4')
+4
+4
 We are now going to stack our 2th skyrise
-It has been 24.0 seconds  and we're starting on Tile 7
-We are now going to score 1 cubes onto the Skyrise in region 7. This gives us another 4.0 points for a total of 22.0 points.
-It has been 27.0 seconds  and we're starting on Tile 7
+[ 1  1  0  1 12  1  0  1  1]
+It has been 23.0 seconds  and we're starting on Tile 7
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+(21.5, '4')
+4
+4
+4
+4
+4
+4
+4
+4
+4
+(21.5, '4')
+4
+4
+4
+4
+4
+4
+4
+4
+(21.5, '4')
+4
+4
+4
+(21.5, '4')
+4
+4
 We are now going to stack our 3th skyrise
-It has been 36.0 seconds  and we're starting on Tile 7
-We are now going to score 1 cubes onto the Skyrise in region 7. This gives us another 4.0 points for a total of 30.0 points.
-It has been 39.0 seconds  and we're starting on Tile 7
+[ 1  1  0  1 12  1  0  1  1]
+It has been 32.0 seconds  and we're starting on Tile 7
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+(21.5, '4')
+4
+4
+4
+4
+4
+4
+4
+4
+4
+(21.5, '4')
+4
+4
+4
+4
+4
+4
+4
+4
+4
+(21.5, '4')
+4
+4
+4
+(21.5, '4')
+4
+4
 We are now going to stack our 4th skyrise
-It has been 48.0 seconds  and we're starting on Tile 7
-We are now going to score 1 cubes onto the Skyrise in region 7. This gives us another 4.0 points for a total of 38.0 points.
-It has been 51.0 seconds  and we're starting on Tile 7
-We are now going to score 3 cubes onto the Medium in region 8. This gives us another 6.0 points for a total of 44.0 points.
-It has been 65.0 seconds  and we're starting on Tile 8
-We are now going to score 3 cubes onto the Medium in region 8. This gives us another 6.0 points for a total of 50.0 points.
-It has been 76.0 seconds  and we're starting on Tile 8
-We are now going to score 2 cubes onto the Small in region 9. This gives us another 4.0 points for a total of 54.0 points.
-It has been 85.0 seconds  and we're starting on Tile 9
-We are now going to score 1 cubes onto the Small in region 9. This gives us another 2.0 points for a total of 56.0 points.
-It has been 88.0 seconds  and we're starting on Tile 9
-We are now going to score 2 cubes onto the Small in region 9. This gives us another 4.0 points for a total of 60.0 points.
-It has been 94.0 seconds  and we're starting on Tile 9
-We are now going to score 1 cubes onto the Small in region 9. This gives us another 2.0 points for a total of 62.0 points.
-It has been 97.0 seconds  and we're starting on Tile 9
-We are now going to score 3 cubes onto the Medium in region 6. This gives us another 6.0 points for a total of 68.0 points.
-It has been 111.0 seconds  and we're starting on Tile 6
-We are now going to score 3 cubes onto the Medium in region 6. This gives us another 6.0 points for a total of 74.0 points.
+[ 1  1  0  1 12  1  0  1  1]
+It has been 41.0 seconds  and we're starting on Tile 7
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+(21.5, '4')
+4
+4
+4
+4
+4
+4
+4
+4
+4
+(21.5, '4')
+4
+4
+4
+4
+4
+4
+4
+4
+4
+(21.5, '4')
+4
+4
+4
+(21.5, '4')
+4
+4
+We are now going to score 3 cubes onto the Skyrise in region 7. This gives us another 12.0 points for a total of 36.0 points.
+[ 1  1  0  1 10  1 -3  1  1]
+It has been 74.5 seconds  and we're starting on Tile 7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+(-5.0, '7')
+7
+7
+7
+7
+7
+7
+7
+7
+7
+(-5.0, '7')
+7
+7
+7
+7
+7
+7
+7
+7
+7
+(-5.0, '7')
+7
+7
+7
+(-5.0, '7')
+7
+7
+We are now going to score 2 cubes onto the Skyrise in region 7. This gives us another 8.0 points for a total of 44.0 points.
+[ 1  1  0  1  9  1 -5  1  1]
+It has been 75.5 seconds  and we're starting on Tile 7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+(-8.0, '7')
+7
+7
+7
+7
+7
+7
+7
+7
+7
+(-8.0, '7')
+7
+7
+7
+7
+7
+7
+7
+7
+(-8.0, '7')
+7
+7
+7
+(-8.0, '7')
+7
+7
+We are now going to score 1 cubes onto the Large in region 1. This gives us another 2.0 points for a total of 46.0 points.
+[ 1  1  0  1  9  1 -6  1  1]
+It has been 77.0 seconds  and we're starting on Tile 1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+(7.0, '1')
+1
+1
+1
+1
+1
+1
+1
+1
+1
+(7.0, '1')
+1
+1
+1
+1
+1
+1
+1
+1
+(7.0, '1')
+1
+1
+1
+(7.0, '1')
+1
+1
+We are now going to score 2 cubes onto the Skyrise in region 7. This gives us another 8.0 points for a total of 54.0 points.
+[-1  1  0  1  8  1 -6  1  1]
+It has been 96.0 seconds  and we're starting on Tile 7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+(-11.5, '7')
+7
+7
+7
+7
+7
+7
+7
+7
+7
+(-11.5, '7')
+7
+7
+7
+7
+7
+7
+7
+(-11.5, '7')
+7
+7
+7
+(-11.5, '7')
+7
+7
+We are now going to score 1 cubes onto the Medium in region 6. This gives us another 2.0 points for a total of 56.0 points.
+[-1  1  0  1  8  1 -7  1  1]
+It has been 96.0 seconds  and we're starting on Tile 6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+(1000, '6')
+6
+6
+6
+6
+6
+6
+6
+6
+6
+(1000, '6')
+6
+6
+6
+6
+6
+6
+6
+(1000, '6')
+6
+6
+6
+(1000, '6')
+6
+6
+We are now going to score 1 cubes onto the Skyrise in region 7. This gives us another 4.0 points for a total of 60.0 points.
+[-1  1  0  1  8  0 -7  1  1]
+It has been 110.5 seconds  and we're starting on Tile 7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+(-14.0, '7')
+7
+7
+7
+7
+7
+7
+7
+7
+7
+(-14.0, '7')
+7
+7
+7
+7
+7
+7
+(-14.0, '7')
+7
+7
+7
+(-14.0, '7')
+7
+7
+We are now going to score 3 cubes onto the Medium in region 8. This gives us another 6.0 points for a total of 66.0 points.
+[ -1   1   0   1   6   0 -10   1   1]
+It has been 113.0 seconds  and we're starting on Tile 8
+8
+8
+8
+8
+8
+8
+8
+8
+8
+8
+(5.0, '8')
+8
+8
+8
+8
+8
+8
+8
+8
+8
+(5.0, '8')
+8
+8
+8
+8
+8
+8
+(5.0, '8')
+8
+8
+8
+(5.0, '8')
+8
+8
+We are now going to score 3 cubes onto the Medium in region 8. This gives us another 6.0 points for a total of 72.0 points.
+[ -1   1   0   1   4   0 -10  -2   1]

@@ -6,8 +6,8 @@ Region,ID,Pole Type,Capacity
 4,5,Medium,4
 6,6,Medium,4
 7,7,Small,2
-7,8,Stack,5
-7,9,Skyrise,0
+7,8,Stack,4
+7,9,Skyrise,1
 8,10,Medium,4
 9,11,Small,2
 9,12,Small,2

@@ -4,9 +4,9 @@ import numpy
 TPO_data = genfromtxt('TPO_NoGraphics.csv', delimiter=',',dtype="str")
 Time_Data = genfromtxt('TravelTime.csv', delimiter=',',dtype="str")
 cubeloc = numpy.array([1,1,0,1,12,1,2,1,1])
+mountainL = numpy.array([1,1,1,1,1,1])
+mountainR = numpy.array([1,1,1,1,1,1])
 
-time = 0
-cubes = 20
 #Region,ID,Pole Type,Time,Points Scored,Number of Cubes/Skyrises,TPO
 def StackTPO(Capacity,LastPosition):
 	#fairly simply - move function is already accounted for. just need to calculate time to add the next skyrise peg.
@@ -31,48 +31,99 @@ def ScoreTPO(z,LastPosition):
 			#intaking code goes here
 			if z[2] == "Small": #replace with a switch statement
 				if x == 1:
-					points = numpy.vstack((points,[3,2]))
+					intake = intaking(LastPosition,x,"No")
+					time = intake[0] + 3
+					LastPosition = intake[1]
+					points = numpy.vstack((points,[time,2]))
 				else:
-					points = numpy.vstack((points,[6,4]))
+					intake = intaking(LastPosition,x,"No")
+					time = intake[0] + 6
+					LastPosition = intake[1]
+					points = numpy.vstack((points,[time,4]))
 			elif z[2] == "Medium":
 				if x == 1:
-					points = numpy.vstack((points,[6,2]))
+					intake = intaking(LastPosition,x,"No")
+					time = intake[0] + 6
+					LastPosition = intake[1]
+					points = numpy.vstack((points,[time,2]))
 				else:
-					points = numpy.vstack((points,[9,4]))
+					intake = intaking(LastPosition,x,"No")
+					time = intake[0] + 9
+					LastPosition = intake[1]
+					points = numpy.vstack((points,[time,4]))
 			elif z[2] == "Large":
 				if x == 1:
-					points = numpy.vstack((points,[8,2]))
+					intake = intaking(LastPosition,x,"No")
+					time = intake[0] + 8
+					LastPosition = intake[1]
+					points = numpy.vstack((points,[time,2]))
 				else:
-					points = numpy.vstack((points,[13,4]))
+					intake = intaking(LastPosition,x,"No")
+					time = intake[0] + 13
+					LastPosition = intake[1]
+					points = numpy.vstack((points,[time,4]))
 			else:
 				if x == 1:
-					points = numpy.vstack((points,[3,4]))
+					intake = intaking(LastPosition,x,"No")
+					time = intake[0] + 3
+					LastPosition = intake[1]
+					points = numpy.vstack((points,[time,4]))
 				else:
-					points = numpy.vstack((points,[6,8]))
+					intake = intaking(LastPosition,x,"No")
+					time = intake[0] + 6
+					LastPosition = intake[1]
+					points = numpy.vstack((points,[time,8]))
 	else:
 		for x in xrange(1,4):
 			#intaking code goes here
 			if z[2] == "Medium":
 				if x == 1:
-					points = numpy.vstack((points,[6,2]))
+					intake = intaking(LastPosition,x,"No")
+					time = intake[0] + 6
+					LastPosition = intake[1]
+					points = numpy.vstack((points,[time,2]))
 				elif x == 2:
-					points = numpy.vstack((points,[9,4]))
+					intake = intaking(LastPosition,x,"No")
+					time = intake[0] + 9
+					LastPosition = intake[1]
+					points = numpy.vstack((points,[time,4]))
 				elif x == 3:
-					points = numpy.vstack((points,[11,6]))
+					intake = intaking(LastPosition,x,"No")
+					time = intake[0] + 11
+					LastPosition = intake[1]
+					points = numpy.vstack((points,[time,6]))
 			elif z[2] == "Large":
 				if x == 1:
-					points = numpy.vstack((points,[8,2]))
+					intake = intaking(LastPosition,x,"No")
+					time = intake[0] + 8
+					LastPosition = intake[1]
+					points = numpy.vstack((points,[time,2]))
 				elif x == 2:
-					points = numpy.vstack((points,[13,4]))
+					intake = intaking(LastPosition,x,"No")
+					time = intake[0] + 13
+					LastPosition = intake[1]
+					points = numpy.vstack((points,[time,4]))
 				elif x == 3:
-					points = numpy.vstack((points,[16,6]))
+					intake = intaking(LastPosition,x,"No")
+					time = intake[0] + 16
+					LastPosition = intake[1]
+					points = numpy.vstack((points,[time,6]))
 			else:
 				if x == 1:
-					points = numpy.vstack((points,[3,4]))
+					intake = intaking(LastPosition,x,"No")
+					time = intake[0] + 3
+					LastPosition = intake[1]
+					points = numpy.vstack((points,[time,4]))
 				elif x == 2:
-					points = numpy.vstack((points,[6,8]))
+					intake = intaking(LastPosition,x,"No")
+					time = intake[0] + 6
+					LastPosition = intake[1]
+					points = numpy.vstack((points,[time,8]))
 				elif x == 3:
-					points = numpy.vstack((points,[9,12]))
+					intake = intaking(LastPosition,x,"No")
+					time = intake[0] + 9
+					LastPosition = intake[1]
+					points = numpy.vstack((points,[time,12]))
 	tpo = numpy.empty(len(points),float)
 	for x in xrange(0,len(points)):
 		points[x][0] += TimeToTile(LastPosition,z[0])
@@ -88,8 +139,189 @@ def TimeToTile(Start,End):
 			return float(x[3])
 	return 0
 
-#def intaking(Start,numberofcubes):
+def side(Start):
+	if Start == 1 or Start == 2 or Start == 4 or Start == 7:
+		return "L"
+	else:
+		return "R"
+
+def intaking(Start,numberofcubes,persistent):
 	#returns time taken to intake, position of intaken cubes, and end position
+	time = 0
+	if persistent == "No":
+		if cubeloc[int(Start)-1] >= numberofcubes:
+			return numberofcubes*2.5,Start
+		else:
+			if cubeloc[int(Start) -1] != 0:
+				numberofcubes -= cubeloc[int(Start)-1]
+				time += cubeloc[int(Start)-1]*2.5
+			if side(int(Start)) == "L" or numpy.sum(mountainR) == 0:
+				for x in xrange(0,7):
+					if x == 0 and mountainL[x] == 1:
+						time += 2.5
+						numberofcubes -= 1
+					elif x == 1 and mountainL[x] == 1:
+						time += 3.5
+						numberofcubes -= 1
+					elif x == 2 and mountainL[x] == 1:
+						time += 2.5
+						numberofcubes -= 1
+					elif x == 3 and mountainL[x] == 1:
+						time += 4.5
+						numberofcubes -= 1
+					elif x == 4 and mountainL[x] == 1:
+						time += 3.5
+						numberofcubes -= 1
+					elif x == 5 and mountainL[x] == 1:
+						time += 2.5
+						numberofcubes -= 1
+					if numberofcubes == 0:
+						return time,Start
+			if side(int(Start)) == "R" or numpy.sum(mountainL) == 0:
+				for x in xrange(0,7):
+					if x == 0 and mountainR[x] == 1:
+						time += 2.5
+						numberofcubes -= 1
+					elif x == 1 and mountainR[x] == 1:
+						time += 3.5
+						numberofcubes -= 1
+					elif x == 2 and mountainR[x] == 1:
+						time += 2.5
+						numberofcubes -= 1
+					elif x == 3 and mountainR[x] == 1:
+						time += 4.5
+						numberofcubes -= 1
+					elif x == 4 and mountainR[x] == 1:
+						time += 3.5
+						numberofcubes -= 1
+					elif x == 5 and mountainR[x] == 1:
+						time += 2.5
+						numberofcubes -= 1
+					if numberofcubes == 0:
+						return time,Start
+			if int(Start) > 0 and int(Start) < 4:
+				for x in xrange(0,3):
+					if cubeloc[x] >= numberofcubes:
+						time += TimeToTile(Start,str(x+1))
+						return time,str(x+1)
+					elif cubeloc[x] < numberofcubes:
+						numberofcubes -= cubeloc[x]
+			else:
+				for x in xrange(3,9):
+					if x != 4:
+						if cubeloc[x] >= numberofcubes:
+							cubeloc[x] -= numberofcubes
+							time += TimeToTile(Start,str(x+1))
+							return time,str(x+1)
+						elif cubeloc[x] < numberofcubes:
+							numberofcubes -= cubeloc[x]
+							cubeloc[x] = 0
+	else:
+		if numpy.sum(cubeloc) == 0:
+					return 1000,Start
+		elif cubeloc[int(Start)-1] >= numberofcubes:
+			cubeloc[int(Start)-1] -= numberofcubes
+			return numberofcubes*2.5,Start
+		else:
+			if cubeloc[int(Start) -1] != 0:
+				cubeloc[int(Start) -1] -= numberofcubes
+				numberofcubes -= cubeloc[int(Start)-1]
+				time += cubeloc[int(Start)-1]*2.5
+			if side(int(Start)) == "L" or numpy.sum(mountainR) == 0:
+				for x in xrange(0,7):
+					if x == 0 and mountainL[x] == 1:
+						time += 2.5
+						numberofcubes -= 1
+						cubeloc[4] -= 1
+						mountainL[x] = 0
+					elif x == 1 and mountainL[x] == 1:
+						time += 3.5
+						numberofcubes -= 1
+						cubeloc[4] -= 1
+						mountainL[x] = 0
+					elif x == 2 and mountainL[x] == 1:
+						time += 2.5
+						numberofcubes -= 1
+						cubeloc[4] -= 1
+						mountainL[x] = 0
+					elif x == 3 and mountainL[x] == 1:
+						time += 4.5
+						numberofcubes -= 1
+						cubeloc[4] -= 1
+						mountainL[x] = 0
+					elif x == 4 and mountainL[x] == 1:
+						time += 3.5
+						numberofcubes -= 1
+						cubeloc[4] -= 1
+						mountainL[x] = 0
+					elif x == 5 and mountainL[x] == 1:
+						time += 2.5
+						numberofcubes -= 1
+						cubeloc[4] -= 1
+						mountainL[x] = 0
+					if numberofcubes == 0:
+						return time,Start
+			if side(int(Start)) == "R" or numpy.sum(mountainL) == 0:
+				for x in xrange(0,7):
+					if x == 0 and mountainR[x] == 1:
+						time += 2.5
+						numberofcubes -= 1
+						cubeloc[4] -= 1
+						mountainR[x] = 0
+					elif x == 1 and mountainR[x] == 1:
+						time += 3.5
+						numberofcubes -= 1
+						cubeloc[4] -= 1
+						mountainR[x] = 0
+					elif x == 2 and mountainR[x] == 1:
+						time += 2.5
+						numberofcubes -= 1
+						cubeloc[4] -= 1
+						mountainR[x] = 0
+					elif x == 3 and mountainR[x] == 1:
+						time += 4.5
+						numberofcubes -= 1
+						cubeloc[4] -= 1
+						mountainR[x] = 0
+					elif x == 4 and mountainR[x] == 1:
+						time += 3.5
+						numberofcubes -= 1
+						cubeloc[4] -= 1
+						mountainR[x] = 0
+					elif x == 5 and mountainR[x] == 1:
+						time += 2.5
+						numberofcubes -= 1
+						cubeloc[4] -= 1
+						mountainR[x] = 0
+					if numberofcubes == 0:
+						return time,Start
+			if int(Start) > 0 and int(Start) < 4:
+				for x in xrange(0,3):
+					if cubeloc[x] >= numberofcubes:
+						cubeloc[x] -= numberofcubes
+						time += TimeToTile(Start,str(x+1))
+						return time,str(x+1)
+					elif cubeloc[x] < numberofcubes:
+						numberofcubes -= cubeloc[x]
+						cubeloc[x] = 0
+			else:
+				for x in xrange(3,9):
+					if x != 4:
+						if cubeloc[x] >= numberofcubes:
+							cubeloc[x] -= numberofcubes
+							time += TimeToTile(Start,str(x+1))
+							return time,str(x+1)
+						elif cubeloc[x] < numberofcubes:
+							numberofcubes -= cubeloc[x]
+							cubeloc[x] = 0
+	return 1000,Start
+
+
+
+
+
+
+
 
 def OptimizedPath():
 	StartingPosition = "7";
@@ -131,18 +363,19 @@ def OptimizedPath():
 			elif newtime > 120.0:
 				time = 120				
 				break
-		place = int(TPO_data[int(winner[1])][3]) - 1
+		place = int(TPO_data[int(winner[1])][3]) - int(winner[5])
 		TPO_data[int(winner[1])][3] = str(place)
 		if winner[2] == "Stack":
 			val = int(TPO_data[9][3]) + 1
 			TPO_data[9][3] = str(val)
-		LastPosition = winner[0]
 		pointcounter += float(winner[4])
 		if winner[2] == "Stack":
 			print "We are now going to stack our "+str(5-int(TPO_data[8][3]))+"th skyrise"
-		else:
-			print "We are now going to score "+str(winner[5])+" cubes onto the "+winner[2]+" in region "+winner[0]+". This gives us another "+str(winner[4])+" points for a total of "+str(pointcounter)+" points."
 
+		else:
+			intaking(LastPosition,int(winner[5]),"Yes")
+			print "We are now going to score "+str(winner[5])+" cubes onto the "+winner[2]+" in region "+winner[0]+". This gives us another "+str(winner[4])+" points for a total of "+str(pointcounter)+" points."
+		LastPosition = winner[0]
 
 
 OptimizedPath()
